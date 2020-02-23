@@ -32,29 +32,24 @@
 </div>
 <div class="row">
     <div class="container">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
-                    <th rowspan="2">No. Ujian</th>
-                    <th rowspan="2">Nama Siswa</th>
-                    <th rowspan="2">Kompetensi Keahlian</th>
-                    <th colspan="4">Nilai UN</th>
-                    <th rowspan="2">Status</th>
+                    <th rowspan="2" style="text-align: center; vertical-align: middle;">No. Ujian</th>
+                    <th rowspan="2" style="text-align: center; vertical-align: middle;">Nama Siswa</th>
+                    <th rowspan="2" style="text-align: center; vertical-align: middle;">Kompetensi Keahlian</th>
+                    <th colspan="4" style="text-align: center; ">Nilai UN</th>
+                    <th rowspan="2" style="text-align: center; vertical-align: middle;">Status</th>
                 </tr>
                 <tr>
-                    <th>Bahasa Indonesia</th>
-                    <th>Bahasa Inggris</th>
-                    <th>Matematika</th>
-                    <th>Kejuruan</th>
+                    <th style="text-align: center; ">Bahasa Indonesia</th>
+                    <th style="text-align: center; ">Bahasa Inggris</th>
+                    <th style="text-align: center; ">Matematika</th>
+                    <th style="text-align: center; ">Kejuruan</th>
                 </tr>
             </thead>
             <tbody>
-            <pre>
-
             <?php
-
-             // echo print_r($siswas->row_array());
-
              if ($siswas->num_rows() > 0 ) {
 
                 foreach ($siswas->result_array() as $data) {
@@ -62,10 +57,10 @@
                     echo '<td>'.$data['no_ujian'].'</td>';
                     echo '<td>'.$data['nama'].'</td>';
                     echo '<td>'.$data['komli'].'</td>';
-                    echo '<td>'.$data['n_bin'].'</td>';
-                    echo '<td>'.$data['n_big'].'</td>';
-                    echo '<td>'.$data['n_mat'].'</td>';
-                    echo '<td>'.$data['n_kejuruan'].'</td>';
+                    echo '<td style="text-align: center; ">'.$data['n_bin'].'</td>';
+                    echo '<td style="text-align: center; ">'.$data['n_big'].'</td>';
+                    echo '<td style="text-align: center; ">'.$data['n_mat'].'</td>';
+                    echo '<td style="text-align: center; ">'.$data['n_kejuruan'].'</td>';
                     echo '<td>';
                     echo ($data['status']==1) ? 'Lulus' : '<em>Tidak Lulus</em>';
                     echo '</td>';

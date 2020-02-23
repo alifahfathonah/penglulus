@@ -10,6 +10,8 @@ class  Admin extends CI_Controller {
 		$this->load->model('user_m','user');
 		$this->load->model('siswa_m','siswa');
 		$this->load->helper('file');
+		check_not_login();
+
 	}
 
 	public function index()

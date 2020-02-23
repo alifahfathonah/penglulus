@@ -4,9 +4,6 @@
 
     <div class="container">
         <h2>Konfigurasi</h2><hr>
-
-
-
         
         <form class="form-horizontal" method="post">
           <input type="hidden" name="cfgID" value="<?=$hsl['id'] ?>">

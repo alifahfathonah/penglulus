@@ -8,6 +8,7 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 		$this->load->model('konfigurasi_m','konfig');
 		$this->load->model('siswa_m','siswa');
+		check_already_login();
 	}
 
 	public function index()

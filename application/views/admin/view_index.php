@@ -2,7 +2,6 @@
     $this->load->view('admin/header');
     ?>
     <div class="container">
-
     	<div class="jumbotron">
     		<div class="container">
     			<h1>Halo, administrator!</h1>

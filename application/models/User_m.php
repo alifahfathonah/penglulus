@@ -4,6 +4,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User_m extends CI_Model {
 
 
+function login ($uname,$pass)
+{
+	$this->db->where('username', $uname);
+	$this->db->where('password', md5($pass));
+		// $this->db->get('Table', limit, offset);
+	$q = $this->db->get('un_user');
+	return $q;
+}
+
+
 public function get($id=null)
 {
 	
