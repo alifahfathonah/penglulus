@@ -26,6 +26,12 @@ public function getStatus($status=null)
 	$q = $this->db->get();
 	return $q;
 }
+
+public function update($data, $id)
+{
+	$this->db->where('id', $id);
+	$this->db->update('un_konfigurasi', $data);
+}
 	
 
 }

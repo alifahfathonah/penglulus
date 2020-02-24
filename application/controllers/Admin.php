@@ -26,10 +26,28 @@ class  Admin extends CI_Controller {
 		$data['hsl'] = $this->konfig->getStatus($status)->row_array();
 		$this->load->view('admin/view_konfigurasi', $data);
 	}
-	
-	public function data()
+
+	public function update_konfig()
 	{
 		
+		$post = $this->input->post(null, TRUE);
+		if ( isset($_POST['submit']) ){
+			$id = $post['cfgID'];
+			$data ['sekolah'] = $post['cfgSekolah'];
+			$data ['tahun'] = $post['cfgTahun'];
+			$data ['tgl_pengumuman'] = $post['cfgTanggal'].' '.$post['cfgJam'];
+
+			$this->konfig->update($data, $id);			
+			redirect(site_url(),'refresh');
+			
+		} else {
+			redirect(site_url(),'refresh');
+		}
+	}
+
+	public function data()
+	{
+
 		$data['siswas'] = $this->siswa->get();
 		$this->load->view('admin/view_data', $data);
 	}
@@ -61,11 +79,11 @@ class  Admin extends CI_Controller {
 
 	public function user()
 	{
-		
+
 		$data['users'] = $this->user->get();
 		$this->load->view('admin/view_user', $data);
 	}
-	
+
 	public function user_proses()
 	{
 		if ( isset($_POST['submit']) ){
@@ -84,7 +102,7 @@ class  Admin extends CI_Controller {
 				}
 
 				$this->user->update($data, $id);
-				
+
 				redirect('admin/user','refresh');
 
 			}

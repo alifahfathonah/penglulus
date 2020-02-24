@@ -5,7 +5,8 @@
 <div class="container">
 <h2>Manajemen User <small><?= ucfirst($page) ?></small></h2><hr>
 
-    <form class="form-horizontal" method="post" action="<?= site_url('admin/user_proses') ?>">
+    <form class="form-horizontal" method="post" action="https://ceklulus.smknegeri1tapaktuan.sch.id/admin/user_proses">
+    
     	<div class="form-group">
     		<label for="username" class="col-sm-2 control-label">Username</label>
     		<div class="col-sm-3">
